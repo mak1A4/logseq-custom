@@ -1,0 +1,14 @@
+/*:root {
+  --atlas-font-family: "Hack Nerd Font";
+  --atlas-title-font-family: "Hack Nerd Font";
+  --ls-font-family: "Hack Nerd Font";
+  --ct-page-title-font-family: var(--ls-font-family);
+  --ct-code-font-family: "Hack Nerd Font";
+}*/
+
+.page-properties {
+    font-size: 10pt;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--ls-primary-background-color);
+    border-left: 4px solid blue;
+}
