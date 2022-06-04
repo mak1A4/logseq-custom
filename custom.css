@@ -6,9 +6,67 @@
   --ct-code-font-family: "Hack Nerd Font";
 }*/
 
-.page-properties {
+.block-properties {
     font-size: 10pt;
     font-family: 'Courier New', Courier, monospace;
     background-color: var(--ls-primary-background-color);
     border-left: 4px solid blue;
+}
+
+.items-baseline {
+    align-items: center !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 1em !important;
+}
+
+.editor-inner .h1.uniline-block,.ls-block h1 {
+    font-size: 1em !important;
+    color: #ff3b31; /*red*/
+    margin: 0px !important;
+}
+.editor-inner .h2.uniline-block,.ls-block h2 {
+    font-size: 1em !important;
+    color: #ff9502; /*orange*/
+    margin: 0px !important;
+}
+.editor-inner .h3.uniline-block,.ls-block h3 {
+    font-size: 1em !important;
+    color: #ffcc00; /*yellow*/
+    margin: 0px !important;
+}
+.editor-inner .h4.uniline-block,.ls-block h4 {
+    font-size: 1em !important;
+    color: #2acd41; /*green*/
+    margin: 0px !important;
+}
+.editor-inner .h5.uniline-block,.ls-block h5 {
+    font-size: 1em !important;
+    color: #027aff; /*blue*/
+    margin: 0px !important;
+}
+.editor-inner .h6.uniline-block,.ls-block h6 {
+    font-size: 1em !important;
+    color: #b051de; /*purple*/
+    margin: 0px !important;
+}
+
+h1 {
+    color: #ff3b31; /*red*/
+}
+h2 {
+    color: #ff9502; /*orange*/
+}
+h3 {
+    color: #ffcc00; /*yellow*/
+}
+h4 {
+    color: #2acd41; /*green*/
+}
+h5 {
+    color: #027aff; /*blue*/
+}
+h6 {
+    color: #b051de; /*purple*/
 }

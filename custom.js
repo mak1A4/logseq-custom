@@ -17,7 +17,7 @@ const throttle = (func, limit) => {
 const updateProperties = function () {
     //update page-properties
     (() => {
-        let ppn = document.getElementsByClassName("page-properties")[0];
+        let ppn = document.getElementsByClassName("block-properties")[0];
         if (!ppn) return;
         let ppb = (() => {
             try { return ppn.parentNode.parentNode.parentNode.parentNode.parentNode.children[0].children[1] }
@@ -27,7 +27,7 @@ const updateProperties = function () {
         ppb.style.display = "none";
     })();
     (() => {
-        let ppan = document.getElementsByClassName("page-properties")[0];
+        let ppan = document.getElementsByClassName("block-properties")[0];
         if (!ppan) return;
         let ppab = (() => {
             try { return ppan.parentNode.parentNode.parentNode.parentNode.parentNode }
@@ -54,16 +54,20 @@ function updateExcalidraw() {
         })();
         if (!blockId) return;
         document.querySelectorAll(".draw").forEach((d) => {
-            d.style.display = "none";
+            d.parentNode.style.display = "none";
         });
 
         let graphPath = logseq.api.get_user_configs().currentGraph.replaceAll("logseq_local_", "");
-        let drawPath = logseq.api.get_block(blockId).content.replaceAll("[[", "").replaceAll("]]", "");
+        let blockContent = logseq.api.get_block(blockId).content;
+        let drawPath = blockContent.match(/\[(.*?)\]/)[1].replaceAll("[", "");
         let fullPath = "vscode://file" + graphPath + "/" + drawPath;
+        let drawName = blockContent.match(/\(([^)]+)\)/);
+        if (drawName) drawName = drawName[1];
 
         let excaliLink = document.createElement("a");
         excaliLink.href = fullPath;
-        excaliLink.text = drawPath;
+        if (drawName) excaliLink.text = drawName;
+        else excaliLink.text = drawPath;
         excaliLink.target = "_blank";
         excaliLink.classList.add("external-link");
 
@@ -101,10 +105,10 @@ function hideNamespace() {
     }
 }
 
-const updateHideNamespace = throttle(hideNamespace, 1000);
+/*const updateHideNamespace = throttle(hideNamespace, 1000);
 const obsNamespace = new MutationObserver(updateHideNamespace);
 obsNamespace.observe(watchTarget, {
     subtree: true,
     attributes: true,
-});
+});*/
 //===================================== end of namespace prefixes collapser
