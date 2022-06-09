@@ -6,11 +6,9 @@
   --ct-code-font-family: "Hack Nerd Font";
 }*/
 
-.block-properties {
+#push-sn-link {
     font-size: 10pt;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: var(--ls-primary-background-color);
-    border-left: 4px solid blue;
+    margin-left: 5px;
 }
 
 .items-baseline {
@@ -19,6 +17,30 @@
 
 h1,h2,h3,h4,h5,h6 {
     font-size: 1em !important;
+}
+
+h1 > span.page-reference {
+    font-weight: normal !important;
+}
+
+h2 > span.page-reference {
+    font-weight: normal !important;
+}
+
+h3 > span.page-reference {
+    font-weight: normal !important;
+}
+
+h4 > span.page-reference {
+    font-weight: normal !important;
+}
+
+h5 > span.page-reference {
+    font-weight: normal !important;
+}
+
+h6 > span.page-reference {
+    font-weight: normal !important;
 }
 
 .editor-inner .h1.uniline-block,.ls-block h1 {
